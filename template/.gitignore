@@ -1,0 +1,6 @@
+.env
+openfaas/{template}-dev.yml
+openfaas/{template}-test.yml
+openfaas/{template}-prod.yml
+openfaas/template
+openfaas/build

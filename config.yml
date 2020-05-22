@@ -1,0 +1,29 @@
+-orcl_service_name:
+  db:
+    motor: "oracle"
+    schema: ""
+    user: ""
+    password: ""
+    proto: ""
+    host: ""
+    port: 1521
+    sid_or_sn: "SERVICE_NAME"
+    service_name: ""
+
+  git:
+    repo: "github.com/myapi"
+
+-orcl_sid:
+  db:
+    motor: "oracle"
+    schema: ""
+    user: ""
+    password: ""
+    proto: ""
+    host: ""
+    port: 1521
+    sid_or_sn: "SID"
+    service_name: ""
+
+  git:
+    repo: "github.com/myapi2"

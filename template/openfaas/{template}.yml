@@ -1,0 +1,26 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://your-gateway:your-port
+functions:
+  {template}:
+    lang: golang-your-template-name
+    handler: ./{template}
+    image: url.com:32000/openfaas/{template}:0.0.1
+    annotations:
+      com.openfaas.health.http.path: "/healthcheck"
+      com.openfaas.health.http.initialDelay: "30s"
+    environment:
+      read_timeout: "60s"
+      write_timeout: "60s"
+      upstream_timeout: "55s"
+      hard_timeout: "55s"
+      exec_timeout: "60s"
+      {OPENFAAS_VARS}
+      {TEMPLATE}_HEALTH_URI: http://gateway.openfaas:8080/function/{template}/_/health
+    limits:
+      cpu: 100m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 128Mi
